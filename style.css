@@ -1,0 +1,225 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+[data-theme="standart-theme"] {
+  --bg-color: linear-gradient(100deg, #575656, #062e3f);
+  --heading: white;
+  --font-color: rgb(247, 226, 223);
+  --btn-color: rgb(247, 226, 223);
+  --btn-text-color: black;
+  --btn-hover: white;
+  --btn-shadow-hover: #fff8 0 0 10px;
+  --primary-color: #181a1a;
+}
+
+[data-theme="dark-theme"] {
+  --bg-color: linear-gradient(100deg, #001214, #001f29);
+  --heading: #d4f1ff;
+  --font-color: white;
+  --btn-color: #002837;
+  --btn-text-color: white;
+  --btn-hover: #001f29;
+  --btn-shadow-hover: #fff8 0 0 10px;
+  --primary-color: #aeb1b4;
+}
+
+[data-theme="light-theme"] {
+  --bg-color: linear-gradient(100deg, #96e8f1, #076585);
+  --heading: #d4f1ff;
+  --font-color: rgb(34, 116, 141);
+  --btn-color: #2d5481e5;
+  --btn-text-color: rgb(85, 150, 187);
+  --btn-hover: #76a1da;
+  --btn-shadow-hover: #fff8 0 0 10px;
+  --primary-color: #dbcbb6da;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  min-height: 100vh;
+  padding-top: 7vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: var(--bg-color);
+}
+
+.standart-theme {
+  background-image: linear-gradient(100deg, #575656, #062e3f);
+  color: blanchedalmond;
+  transition: 0, 3s linear;
+}
+
+.light-theme {
+  background-image: linear-gradient(100deg, #d4f1ff, #ffffff);
+  color: #182f42;
+  transition: 0, 3s linear;
+}
+
+.dark-theme {
+  background-image: linear-gradient(100deg, #001214, #001f29);
+  color: white;
+  transition: 0, 3s linear;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.flexrow-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 3%;
+  width: 100%;
+}
+
+.theme-selector {
+  border: 1px solid blanchedalmond;
+  border-radius: 100%;
+  height: 35px;
+  width: 35px;
+  margin: 0 8px;
+  transition: transform 150ms ease-in-out, box-shadow 200ms ease-in-out;
+}
+
+.theme-selector:hover {
+  box-shadow: white 0 0 8px;
+}
+
+.theme-selector:active {
+  transform: scale(0.95);
+}
+
+.standard-theme {
+  background-image: linear-gradient(100deg, #575656, #062e3f);
+}
+
+.light-theme {
+  background-image: linear-gradient(100deg, #d4f1ff, #ffffff);
+}
+
+.darker-theme {
+  background-image: linear-gradient(100deg, #001214, #001f29);
+}
+
+#title {
+  border-right: solid 1.5px black;
+  overflow: hidden;
+  letter-spacing: 0.2rem;
+  margin: 50px 0 20px 0;
+  max-width: 180px;
+  white-space: nowrap;
+  color: var(--heading);
+}
+
+#title {
+  animation: animated-text 2s steps(11, end) 0.5s 1 normal both,
+    animated-cursor 750ms steps(11, end) 50;
+}
+
+@keyframes animated-cursor {
+  from {
+    border-right-color: var(--heading);
+  }
+
+  to {
+    border-right-color: transparent;
+    border-right: 0px transparent;
+  }
+}
+
+@keyframes animated-text {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 180px;
+  }
+}
+
+.main form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 15px 0;
+  font-size: 22px;
+}
+
+.main input {
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+  border-radius: 17px 0 0 17px;
+  max-width: 500px;
+  width: 100%;
+  transition: background-color 200ms ease-in-out;
+  color: var(--font-color);
+  background-color: var(--primary-color);
+}
+
+.form-button {
+  border: none;
+  transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out;
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 0 17px 17px 0;
+  white-space: nowrap;
+  color: var(--btn-text-color);
+  background-color: var(--btn-color);
+}
+
+.form-button:hover {
+  box-shadow: var(--btn-shadow-hover);
+  background-color: var(--btn-hover);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.to-do-list {
+  padding: 0;
+  list-style: none;
+}
+
+.to-do {
+  margin: 10px;
+  font-size: 17px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 30px;
+  padding: 8px;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  min-width: 160px;
+}
+
+.to-do-item {
+  margin-right: auto;
+}
+
+.standart-to-do {
+  background-color: rgb(26, 27, 27);
+}
+
+.checked {
+  text-decoration: line-through;
+  color: black;
+  background-color: grey;
+}
+
+.delete-btn,
+.check-btn {
+  background-color: transparent;
+  color: var(--font-color);
+}
